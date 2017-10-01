@@ -1,4 +1,19 @@
-/* Styles */
 body {
-	background-color: lightgreen;
+	background-color: grey;
+	font-family: verdana;
+	text-align: center;
+
+}
+
+div {
+	width: 200px;
+    height: 80px;
+	margin : auto;
+}
+
+#box {
+    border: 1px solid rgba(255,255,255,0.6);
+    background: linear-gradient(#eee, #fff);
+    padding: 5px;
+
 }
