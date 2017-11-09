@@ -1,4 +1,5 @@
-window.onclick = function load() {
+var alreadyClicked = false;
+window.onclick = function click() {
     document.getElementById("p1").setAttribute("style", "text-align: center");
 
     document.getElementById("p2").setAttribute("style", "text-align: right");
@@ -8,27 +9,34 @@ window.onclick = function load() {
     document.getElementsByClassName("paragraph")[1].setAttribute("style", "color: cyan; background-color: blue;");
 
     var i = 0
-    setInterval(function () {
-        var colors = ["red", "white", "blue", "black", "green", "orange"];
 
-        if (i >= colors.length) {
-            i = 0;
-        }
+    if (alreadyClicked == false) {
+        setInterval(function () {
+            var colors = ["red", "white", "blue", "black", "green", "orange"];
 
-        var paragraph5 = document.getElementsByTagName("p")[4].style.color = colors[i];
+            if (i >= colors.length) {
+                i = 0;
+            }
 
-        i++
-    }, 3000);
+            var paragraph5 = document.getElementsByTagName("p")[4].style.color = colors[i];
+
+            i++;
+        }, 3000);
+    }
+    alreadyClicked = true;
 }
 
+var used = false;
 function paragraph6() {
-    //var used = false;
-    //if (used == false) {
-    var p6 = document.createElement("P");
-    document.body.appendChild(p6);
-    //  used = true;
-    //}
 
+    if (used == false) {
+        var p6 = document.createElement("P");
+        var content = document.createTextNode("This is a paragraph.");
+        p6.appendChild(content);
+        document.body.appendChild(p6);
+
+    }
+    used = true;
 }
 
 
